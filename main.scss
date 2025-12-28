@@ -169,6 +169,10 @@ li {
                 .day_complete {
                     background-color: #1a7f62;
                     color: #1acb97;
+
+                    &:hover {
+                        color: #1acb97;
+                    }
                 }
 
                 .today {

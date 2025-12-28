@@ -155,6 +155,9 @@ li {
   background-color: #1a7f62;
   color: #1acb97;
 }
+.wrapper .container .calendar .calendar_container .day_complete:hover {
+  color: #1acb97;
+}
 .wrapper .container .calendar .calendar_container .today {
   border: 2px solid #fff;
   color: #fff;
