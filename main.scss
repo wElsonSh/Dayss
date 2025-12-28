@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    user-select: none;
+    background-color: #111;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+.wrapper {
+    width: 40rem;
+    height: 55rem;
+    background-color: #141414;
+    border: 2px solid #333333b3;
+    border-radius: 26px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px #0000007a;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .header {
+            width: 100%;
+            height: fit-content;
+            background-color: #111;
+            border: 2px solid #2222229f;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 0.7rem 1rem;
+            box-sizing: border-box;
+            box-shadow: 0 0 20px #0000007a;
+
+            .header_user_icon {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-image: url('./img/9c127e22664eb9d02fe0f0135e874415.jpg');
+                background-size: cover;
+                background-position: center;
+                border: 2px solid #333333b3;
+            }
+
+            p {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 2em;
+                color: #ffffff;
+            }
+        }
+
+        .calendar {
+            width: 100%;
+            height: fit-content;
+            background-color: #111;
+            border: 2px solid #2222229f;
+            border-radius: 16px;
+            box-shadow: 0 0 20px #0000007a;
+            padding: 0.7rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                font-family: "Bebas Neue", sans-serif;
+                font-size: 2em;
+                color: #333;
+                display: flex;
+                gap: 2rem;
+
+                span {
+                    color: #ffffff;
+
+
+                    .date:nth-child(1) {
+                        color: #fb60d1;
+                    }
+
+                    .date:nth-child(2) {
+                        color: #1acb97;
+                    }
+
+                    .date:nth-child(3) {
+                        color: #fe7e01;
+                    }
+
+                    .completed {
+                        color: #5b94fa;
+                    }
+                }
+            }
+
+            .calendar_container {
+                width: 100%;
+                height: 20rem;
+                overflow-x: hidden;
+                overflow-y: scroll;
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                padding: 1rem 0;
+                position: relative;
+                scrollbar-width: none;
+
+                .calendar_list {
+                    position: absolute;
+                    width: fit-content;
+                    height: fit-content;
+                    display: grid;
+                    grid-template-columns: repeat(12, 2.5rem);
+                    grid-template-rows: repeat(31, 2.5rem);
+                    gap: 7px;
+                }
+
+                .day {
+                    width: 100%;
+                    height: 100%;
+                    background-color: #191919;
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #333;
+                    font-family: "Bebas Neue", sans-serif;
+                    cursor: pointer;
+                    transition: all .2s cubic-bezier(0, 1.29, .96, -1.28);
+                    box-sizing: border-box;
+
+                    &:hover {
+                        color: #fff;
+                    }
+
+                }
+
+                .day_complete {
+                    background-color: #1a7f62;
+                    color: #1acb97;
+                }
+
+                .today {
+                    border: 2px solid #fff;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
