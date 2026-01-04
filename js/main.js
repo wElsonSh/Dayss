@@ -3,16 +3,51 @@ const date_day = document.getElementById("date_day")
     , date_year = document.getElementById("date_year")
     , completed = document.getElementById("completed")
     , calendar_list = document.getElementById("calendar_list")
+    , day = document.getElementById("day")
+    , time = document.getElementById("time")
+
+var days_arr = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+]
 let DATE = new Date()
     , days = getFullDaysYear(DATE.getFullYear())
     , days_today = getTodayDaysYear(DATE.getFullYear(), DATE.getMonth(), DATE.getDate())
     , completed_num = completedCalc(days, days_today)
     , all_days
+    , calendar_type = true
+    , day_index = DATE.getDay()
+    , time_info
+    , hours = DATE.getHours()
+    , minutes = DATE.getMinutes()
+    , seconds = DATE.getSeconds()
 
-date_day.innerHTML = DATE.getDate()
-date_month.innerHTML = DATE.getMonth() + 1
-date_year.innerHTML = DATE.getFullYear()
-completed.innerHTML = completed_num + "%"
+day.innerHTML = days_arr[day_index]
+
+const intervalSecond = setInterval(() => {
+    DATE = new Date()
+    hours = DATE.getHours()
+    minutes = DATE.getMinutes()
+    seconds = DATE.getSeconds()
+    time_info = [hours, minutes, seconds]
+
+    time.innerHTML = time_info.join(":")
+
+    days_today = getTodayDaysYear(DATE.getFullYear(), DATE.getMonth(), DATE.getDate())
+    days = getFullDaysYear(DATE.getFullYear())
+
+    completed_num = completedCalc(days, days_today)
+
+    date_day.innerHTML = DATE.getDate()
+    date_month.innerHTML = DATE.getMonth() + 1
+    date_year.innerHTML = DATE.getFullYear()
+    completed.innerHTML = completed_num + "%"
+}, 1000)
 
 for (let i = 1; i <= days; i++) {
     const day = document.createElement("li")

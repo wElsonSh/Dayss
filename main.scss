@@ -100,6 +100,7 @@ li {
                 font-size: 2em;
                 color: #333;
                 display: flex;
+                align-items: center;
                 gap: 2rem;
 
                 span {
@@ -122,6 +123,13 @@ li {
                         color: #5b94fa;
                     }
                 }
+
+                .right {
+                    span {
+                        left: calc(100% - 3px);
+                        transform: translateX(-100%);
+                    }
+                }
             }
 
             .calendar_container {
@@ -135,6 +143,7 @@ li {
                 padding: 1rem 0;
                 position: relative;
                 scrollbar-width: none;
+
 
                 .calendar_list {
                     position: absolute;
@@ -178,6 +187,46 @@ li {
                 .today {
                     border: 2px solid #fff;
                     color: #fff;
+                }
+            }
+        }
+
+        .day_info {
+            width: 100%;
+            height: 7rem;
+            background-color: #111;
+            border: 2px solid #2222229f;
+            border-radius: 16px;
+            box-shadow: 0 0 20px #0000007a;
+            padding: 0.7rem;
+            box-sizing: border-box;
+
+            .day_info_container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                span {
+                    width: 50%;
+                    display: block;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    font-family: "Bebas Neue", sans-serif;
+                    font-size: 3em;
+                }
+
+                #day {
+                    color: #fb60d1;
+                    border-right: 2px dashed #333;
+                }
+
+                #time {
+                    color: #1acb97;
                 }
             }
         }
